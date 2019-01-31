@@ -1,0 +1,31 @@
+import java.util.*;
+import java.math.*;
+
+public class Solution {
+    long fibosum(long n)
+    {
+        long a=1,b=1,c=0,sum=0;
+        while(c<=n)
+        {
+            c=a+b;
+            a=b;b=c;
+            if(c<=n)
+            {
+            if(c%2==0)
+                sum=sum+c;
+        }}
+        return sum;
+    }
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int t = in.nextInt();
+        Solution ob=new Solution();
+        for(int a0 = 0; a0 < t; a0++)
+        {
+            long n = in.nextLong();
+            long sum=ob.fibosum(n);
+            System.out.println(sum);
+        }
+    }
+}
