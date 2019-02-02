@@ -1,0 +1,41 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+    long triplet(int n)
+    {
+        int i,j,m=0;long pro=0;
+        for(i=1;i<=n/2;i++)
+            {
+                for(j=i;j<=n-2*i;j++)
+                {
+                    m=n-i-j;
+                    if(m<j)
+                        break;
+                    if(m<=0)
+                    break;
+                    if(i*i+j*j==m*m&&pro<i*j*m)
+                    pro=i*j*m;
+                    
+                }
+        }
+        return(pro);
+    }
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int t = in.nextInt();
+        Solution ob=new Solution();
+        for(int a0 = 0; a0 < t; a0++){
+            int n = in.nextInt();
+            long r=ob.triplet(n);
+            if(r==0)
+                System.out.println("-1");
+            else
+                System.out.println(r);
+        }
+    }
+}
