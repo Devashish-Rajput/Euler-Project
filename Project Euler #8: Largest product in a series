@@ -1,0 +1,35 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+    void product(String num,int k)
+    {
+        long largestProduct=0;
+        for (int i = 0; i < num.length() -k; i ++) {
+            long product = 1;
+
+            for (int j = i; j < i + k; j++) {
+                product *= Integer.parseInt(num.substring(j, j + 1));
+            }
+            if (product > largestProduct) largestProduct = product;
+        }
+        System.out.println(largestProduct);
+    }
+
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int t = in.nextInt();
+        Solution ob=new Solution();
+        for(int a0 = 0; a0 < t; a0++){
+            int n = in.nextInt();
+            int k = in.nextInt();
+            String num = in.next();
+            ob.product(num,k);
+            
+        }
+    }
+}
